@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../libs/supabase";
-import { StyleSheet, View, Alert, TextInput, Button } from "react-native";
+import { StyleSheet, View, Alert, TextInput, Button, Text } from "react-native";
 import { Session } from "@supabase/supabase-js";
 
 export default function Account({ session }: { session: Session }) {
@@ -79,15 +79,18 @@ export default function Account({ session }: { session: Session }) {
   return (
     <View style={styles.container}>
       <View style={[styles.verticallySpaced, styles.mt20]}>
+        <Text>Email</Text>
         <TextInput value={session?.user?.email} />
       </View>
       <View style={styles.verticallySpaced}>
+        <Text>username</Text>
         <TextInput
           value={username || ""}
           onChangeText={(text) => setUsername(text)}
         />
       </View>
       <View style={styles.verticallySpaced}>
+        <Text>website</Text>
         <TextInput
           value={website || ""}
           onChangeText={(text) => setWebsite(text)}
